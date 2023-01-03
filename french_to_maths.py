@@ -30,5 +30,10 @@ def translate_to_maths(txt):
 }
     translated = ""
     for char in txt.lower():
-        translated += french_to_maths[char]
+        if char in french_to_maths:
+            translated += french_to_maths[char]
+        else:
+            translated +=char
     return translated
+
+print(translate_to_maths("hello sioban"))
